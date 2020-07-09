@@ -23,7 +23,7 @@ class WaypointLogger():
                             data.pose.pose.orientation.z, 
                             data.pose.pose.orientation.w])
 
-        euler = tf.transformations.euler_from_quaternion(quaternion)
+        euler = np.array(tf.transformations.euler_from_quaternion(quaternion))
         speed = LA.norm(np.array([data.twist.twist.linear.x, 
                                 data.twist.twist.linear.y, 
                                 data.twist.twist.linear.z]),2)
@@ -39,6 +39,9 @@ class WaypointLogger():
                                             data.pose.pose.position.y,
                                             euler[2],
                                             speed))
+
+
+            # print(euler[2], euler[0], euler[1], np.array(euler))
 
     def outpout_process(self, current_pose, previous_pose):
         pose_x = current_pose.pose.pose.position.x

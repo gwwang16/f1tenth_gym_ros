@@ -35,7 +35,7 @@ def getKey():
 
 
 speed = 2.0
-turn = 0.25
+turn = 0.4
 
 
 def vels(speed, turn):
@@ -44,7 +44,7 @@ def vels(speed, turn):
 
 if __name__ == "__main__":
     settings = termios.tcgetattr(sys.stdin)
-    pub = rospy.Publisher('/drive', AckermannDriveStamped, queue_size=10)
+    pub = rospy.Publisher('/drive', AckermannDriveStamped, queue_size=1)
     rospy.init_node('keyboard', anonymous=True)
 
     x = 0
@@ -75,7 +75,7 @@ if __name__ == "__main__":
             pub.publish(msg)
 
     except:
-        print 'error'
+        print('error')
 
     finally:
         msg = AckermannDriveStamped()
