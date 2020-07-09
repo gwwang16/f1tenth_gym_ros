@@ -9,9 +9,12 @@ from numpy import linalg as la
 import tf
 import os
 import csv
+import rospkg
 
-
-csv_path = rospy.get_param('CSV_path')
+rospack = rospkg.RosPack()
+package_path = rospack.get_path('f1tenth_gym_ros')
+file_path = rospy.get_param('CSV_path')
+csv_path = package_path + file_path
 
 with open(csv_path) as f:
     path_points = [tuple(line) for line in csv.reader(f)]

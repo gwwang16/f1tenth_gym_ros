@@ -14,6 +14,7 @@ from numpy import linalg as la
 import tf
 import os
 import csv
+import rospkg
 
 from utils import visualize_point, nearest_point_on_trajectory, first_point_on_trajectory_intersecting_circle
 
@@ -24,7 +25,12 @@ class PurePursuit(object):
     """
 
     def __init__(self):
-        self.csv_path = rospy.get_param('CSV_path')
+
+        rospack = rospkg.RosPack()
+        package_path = rospack.get_path('f1tenth_gym_ros')
+        file_path = rospy.get_param('CSV_path')
+        self.csv_path = package_path + file_path
+
         drive_topic = rospy.get_param('ego_drive_topic')
         odom_topic = rospy.get_param('ego_odom_topic')
         # self.max_velocity = rospy.get_param('max_velocity')

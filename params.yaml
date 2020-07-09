@@ -19,4 +19,4 @@ map_img_ext: '.png'
 executable_dir: '/f1tenth_gym/build/'
 
 waypoints_path: '/f1tenth_gym/maps/berlin.csv'
-CSV_path: '/home/wang/f1tenth_ws/src/f1tenth_gym_ros/maps/berlin-2.csv'
+CSV_path: '/maps/berlin-2.csv'
