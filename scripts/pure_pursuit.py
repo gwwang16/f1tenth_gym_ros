@@ -33,10 +33,11 @@ class PurePursuit(object):
 
         drive_topic = rospy.get_param('ego_drive_topic')
         odom_topic = rospy.get_param('ego_odom_topic')
+        scan_topic = rospy.get_param('ego_scan_topic')
         # self.max_velocity = rospy.get_param('max_velocity')
 
         self.safe_speed = 2.0
-        self.wheelbase = 0.5
+        self.wheelbase = 0.3302
         self.max_reacquire = 10.
         self.lookahead_distance = 1.5
         self.lookahead_distance_ = 1.5
@@ -50,6 +51,8 @@ class PurePursuit(object):
             drive_topic, AckermannDriveStamped, queue_size=1)
         self.odom_sub = rospy.Subscriber(
             odom_topic, Odometry, self.pose_callback, queue_size=10)
+        # self.scan_sub = rospy.Subscriber(
+        #     scan_topic, LaserScan, self.scan_callback, queue_size=10)
 
         # Publisher for the goal point
         self.goal_pub = rospy.Publisher(
@@ -127,7 +130,6 @@ class PurePursuit(object):
 
         lookahead_point = self._get_current_waypoint(
             self.waypoints, self.lookahead_distance, position, yaw)
-
         visualize_point(lookahead_point, self.goal_pub)
 
         if lookahead_point is None:

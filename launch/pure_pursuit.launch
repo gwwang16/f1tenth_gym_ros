@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <launch>
   
-<include file="$(find f1tenth_gym_ros)/launch/gym_bridge_host.launch"/>
+  <include file="$(find f1tenth_gym_ros)/launch/gym_bridge_host.launch"/>
 
 
-<rosparam command="load" file="$(find f1tenth_gym_ros)/params.yaml" />
+  <rosparam command="load" file="$(find f1tenth_gym_ros)/params.yaml" />
 
-<node pkg="f1tenth_gym_ros" name="pure_pursuit_node" type="pure_pursuit.py" output="screen"/>
+  <node pkg="f1tenth_gym_ros" name="pure_pursuit_node" type="pure_pursuit.py" output="screen"/>
 
-<node pkg="f1tenth_gym_ros" name="visualize_markers_node" type="visualize_points.py" output="screen"/>
+  <node pkg="f1tenth_gym_ros" name="visualize_markers_node" type="visualize_points.py" output="screen"/>
 
 
-  </launch>
+</launch>

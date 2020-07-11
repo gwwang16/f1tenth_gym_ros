@@ -190,7 +190,7 @@ Visualization Manager:
       Marker Topic: /waypoints_points
       Name: MarkerArray
       Namespaces:
-        "": true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/MarkerArray
@@ -228,26 +228,21 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Class: rviz/Orbit
-      Distance: 32.003395080566406
+      Angle: -1.5699996948242188
+      Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
-      Focal Point:
-        X: 2.500638484954834
-        Y: -14.115199089050293
-        Z: -0.12284084409475327
-      Focal Shape Fixed Size: true
-      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7797971963882446
+      Scale: 38.398746490478516
       Target Frame: <Fixed Frame>
-      Value: Orbit (rviz)
-      Yaw: 3.325406551361084
+      Value: TopDownOrtho (rviz)
+      X: 3.5384225845336914
+      Y: -11.580278396606445
     Saved: ~
 Window Geometry:
   Displays:

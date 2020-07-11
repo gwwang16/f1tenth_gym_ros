@@ -20,7 +20,7 @@ class PurePursuitAgent(Agent):
         self.max_reacquire = 10.
         with open(csv_path) as f:
             wpts = [tuple(line) for line in csv.reader(f)]
-            self.waypoints = np.array([(float(pt[0]), float(pt[1]), float(pt[2]), float(pt[3]), float(pt[4]), float(pt[5])) for pt in wpts])
+            self.waypoints = np.array([(float(pt[0]), float(pt[1]), float(pt[2]), float(pt[3])) for pt in wpts])
 
     def _get_current_waypoint(self, waypoints, lookahead_distance, position, theta):
         wpts = waypoints[:, 0:2]

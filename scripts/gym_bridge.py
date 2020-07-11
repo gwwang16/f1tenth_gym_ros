@@ -16,6 +16,7 @@ from tf.transformations import quaternion_from_euler
 import numpy as np
 
 from agents import PurePursuitAgent
+import rospkg
 
 import gym
 class GymBridge(object):
